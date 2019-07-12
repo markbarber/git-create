@@ -25,7 +25,11 @@ source .my_commands.sh
 
 Run the following inside this project's directory.
 ```
-git-create <name of your project>
+git-create <path to project>
+```
+Example will create a `foobar` repository at the given path:
+```
+git-create ~/Desktop/foobar
 ```
 
 ### Make Command Global
@@ -33,5 +37,5 @@ Add the contents of the `.my_commands.sh` file into your `bash_profile`. Restart
 
 To run the script globally, type the following in any directory. It will save your new Github project in the folder you specified in your `.env` file.
 ```
-git-create <name of your project>
+git-create <path to project>
 ```
