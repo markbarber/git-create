@@ -18,4 +18,4 @@ def create():
 
 if __name__ == "__main__":
     create()
-    
+    sys.exit(0)
