@@ -6,13 +6,12 @@ from dotenv import load_dotenv
 load_dotenv()
 
 path = os.getenv("FILEPATH")
-username = os.getenv("USERNAME")
-password = os.getenv("PASSWORD")
+token = os.getenv("GITTOKEN")
 
 def create():
     folderName = str(sys.argv[1])
     os.makedirs(path + str(sys.argv[1]))
-    user = Github(password).get_user()
+    user = Github(token).get_user()
     repo = user.create_repo(sys.argv[1])
     print("Succesfully created repository {}".format(sys.argv[1]))
 
