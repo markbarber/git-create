@@ -5,7 +5,6 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
-path = os.getenv("FILEPATH")
 token = os.getenv("GITTOKEN")
 
 def create():
@@ -14,9 +13,13 @@ def create():
 
     # folderName = str(firstArg)
     os.makedirs(path)
-    user = Github(token).get_user()
-    repo = user.create_repo(name)
-    print(repo.git_url)
+    github = Github(token)
+    user = github.get_user()
+
+    repo = user.create_repo(name=name, auto_init=True)
+
+    print(repo.git_url.replace("git://github.com/", "git@github.com:"))
+
 
 if __name__ == "__main__":
     create()
