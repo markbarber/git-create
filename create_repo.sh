@@ -12,5 +12,6 @@ function git-create() {
     git clone $url $path
 }
 
+cd "$(dirname "$0")" || exit
 
-git-create ~/Desktop/temp
+git-create $1

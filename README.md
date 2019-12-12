@@ -15,27 +15,26 @@ This project requires Python3 and PIP. You'll also need to ensure your SSH keys 
 pip install -r requirements.txt
 ```
 
-## Usage
-### One Time Use
-Run the following in the project directory.
+### Make available for use
 
-```
-source .my_commands.sh
-```
+You add create_repo.sh to your path or add an alias.
 
-Run the following inside this project's directory.
+####How to add an alias to your ~/.bash_profile
+```
+alias git-create="/path/to/this/project/git-create/create_repo.sh"
+```
+Then reload your profile `source ~/.bash_profile`, or start a new terminal session.
+
+### Using the Script
+Run the following command in any directory. It will clone your new Github project in the path specified as the parameter
 ```
 git-create <path to project>
 ```
-Example will create a `foobar` repository at the given path:
+
+####Example
+Create repo `foobar`, and cloning it into `~/Desktop/foobar` 
 ```
 git-create ~/Desktop/foobar
 ```
 
-### Make Command Global
-Add the contents of the `.my_commands.sh` file into your `bash_profile`. Restart your terminal after updating the file.
 
-To run the script globally, type the following in any directory. It will save your new Github project in the folder you specified in your `.env` file.
-```
-git-create <path to project>
-```
